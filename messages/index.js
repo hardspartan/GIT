@@ -32,7 +32,7 @@ const operacion='Operacion';
 const personalizada='Atencion Personalizada';
 const logeo='Iniciar Sesion';
 
-const LuisModelUrl = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/b5c609a1-f472-44d6-8e4f-6fd492e80b8c?subscription-key=0d5dbf9d32f342648caa7326d804c604';
+const LuisModelUrl = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/126625f6-0628-4373-801a-7f7f0039f75b?subscription-key=cdd712f237464867a4ed82d382c3cd2d';
 //const name='';
 
 var bot = new builder.UniversalBot(connector, [
@@ -53,12 +53,12 @@ var bot = new builder.UniversalBot(connector, [
             session.beginDialog('operacion-Dialogo:/')
             break;
             case luis:
-            session.send('Bienvenido a BBVAchat, mi nombre es ARTU, en que te puedo ayudar?')
+            session.send('Bienvenido mi nombre es ARTU, en que te puedo ayudar?')
             var bot2 = new builder.UniversalBot(connector);
             var recognizer = new builder.LuisRecognizer(LuisModelUrl);
             var intents = new builder.IntentDialog({ recognizers: [recognizer] })
             //sub-dialogos luis 
-            .matches('consulta', '/consulta')
+            .matches('celular', '/consulta')
             .matches('despedida', '/despedida')
             .matches('direccion', '/direccion')
             .matches('queja', '/queja')
